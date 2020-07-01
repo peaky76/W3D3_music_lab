@@ -23,5 +23,14 @@ album_2b.save()
 album_1.genre = 'metal'
 album_1.update()
 
+p artist_2.albums()
+p album_1.artist()
+
+p Album.find(album_1.id)
+p Artist.find(artist_2.id)
+
+p Album.find_by_genre('folk')
+p Artist.find_by_name('Fairport Convention')
+
 binding.pry
 nil
