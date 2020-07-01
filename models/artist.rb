@@ -13,7 +13,8 @@ class Artist
 
     def save()
         sql = "INSERT INTO artists
-        (name) VALUES ($1) RETURNING id"
+        (name) VALUES ($1) 
+        RETURNING id"
         values = [@name]
         result = SqlRunner.run(sql, values)
         @id = result[0]['id'].to_i()
@@ -21,8 +22,16 @@ class Artist
 
     def update()
         sql = "UPDATE artists
-        SET name = $1 WHERE id = $2"
+        SET name = $1 
+        WHERE id = $2"
         values = [@name, @id]
+        result = SqlRunner.run(sql, values)
+    end
+
+    def delete()
+        sql = "DELETE FROM artists 
+        WHERE id = $1"
+        values = [@id]
         result = SqlRunner.run(sql, values)
     end
 
