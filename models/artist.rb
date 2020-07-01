@@ -46,4 +46,12 @@ class Artist
         result = SqlRunner.run(sql)
     end
 
+    def albums()
+        sql = "SELECT * FROM albums
+        WHERE artist_id = $1"
+        values = [@id]
+        result = SqlRunner.run(sql, values)
+        return result.map { |album| Album.new(album) }
+    end
+
 end
