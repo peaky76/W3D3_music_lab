@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS artists;
+
+CREATE TABLE artists(
+    id INT PRIMARY KEY,
+    name VARCHAR(255)
+);
