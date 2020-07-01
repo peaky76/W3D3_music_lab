@@ -14,8 +14,16 @@ album_1.save()
 artist_2 = Artist.new( {'name' => 'Fairport Convention'} )
 artist_2.save()
 
+album_2 = Album.new( {'title' => 'Full House', 'genre' => 'folk'})
+album_2.save()
+
+album_3 = Album.new( {'title' => 'What We Did On Our Holidays', 'genre' => 'folk'})
+album_3.save()
+
 album_1.genre = 'metal'
 album_1.update()
+
+album_3.delete()
 
 binding.pry
 nil
