@@ -5,7 +5,7 @@ class Album
 
     attr_accessor :title, :genre, :artist_id
     attr_reader :id
-    
+
     def initialize(options)
         @id = options['id'].to_i() if options['id']
         @title = options['title']
@@ -29,6 +29,11 @@ class Album
         WHERE id = $3"
         values = [@title, @genre, @id]
         result = SqlRunner.run(sql, values)
+    end
+
+    def self.delete_all()
+        sql = "DELETE FROM albums"
+        result = SqlRunner.run(sql)
     end
 
 end
