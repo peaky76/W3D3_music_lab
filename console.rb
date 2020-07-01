@@ -23,7 +23,6 @@ album_3.save()
 album_1.genre = 'metal'
 album_1.update()
 
-album_3.delete()
 
 binding.pry
 nil
